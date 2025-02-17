@@ -37,8 +37,7 @@ class AddFriend {
 
 			// Opening file in reading and write mode.
 
-			RandomAccessFile raf
-				= new RandomAccessFile(file, "rw");
+			RandomAccessFile raf = new RandomAccessFile(file, "rw");
 			boolean found = false;
 
 			// Checking whether the name
@@ -52,16 +51,14 @@ class AddFriend {
 
 				// splitting the string to get name and
 				// number
-				String[] lineSplit
-					= nameNumberString.split("!");
+				String[] lineSplit= nameNumberString.split("!");
 
 				// separating name and number.
 				name = lineSplit[0];
 				number = Long.parseLong(lineSplit[1]);
 
 				// if condition to find existence of record.
-				if (name == newName
-					|| number == newNumber) {
+				if (name == newName || number == newNumber) {
 					found = true;
 					break;
 				}
@@ -71,9 +68,7 @@ class AddFriend {
 
 				// Enter the if block when a record
 				// is not already present in the file.
-				nameNumberString
-					= newName + "!"
-					+ String.valueOf(newNumber);
+				nameNumberString= newName + "!" + String.valueOf(newNumber);
 
 				// writeBytes function to write a string
 				// as a sequence of bytes.
@@ -96,8 +91,7 @@ class AddFriend {
 				raf.close();
 
 				// Print the message
-				System.out.println(" Input name"
-								+ " does not exists. ");
+				System.out.println(" Input name" + " does not exists. ");
 			}
 		}
 
